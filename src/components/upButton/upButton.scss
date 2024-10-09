@@ -1,0 +1,49 @@
+.upBtn {
+    z-index: 99999;
+    position: fixed;
+    bottom: 125px;
+    right: -54px;
+    background: rgba(0,0,0,.4);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 17px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
+
+.animationOpen {
+    animation: appearance 600ms forwards;
+}
+
+.animationClose {
+    animation: disappear 600ms;
+}
+
+.none{
+    opacity: 0!important;
+}
+
+.flex {
+    display: flex;
+}
+
+@keyframes appearance {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-54px);
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+        right: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}

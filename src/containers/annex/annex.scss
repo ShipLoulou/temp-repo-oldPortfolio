@@ -1,0 +1,39 @@
+@import '../../utils/variable.scss';
+
+.annex {
+    width: 80%;
+    max-width: 1080px;
+    margin: auto;
+    padding: 4% 0;
+    &--container {
+        display: flex;
+    }
+    h2 {
+        font-family: $title-font;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 1.4em;
+        color: $text-darkGrey;
+        margin: 0;
+    }
+    &--text {
+        font-family: $text-font;
+        font-weight: 300;
+        line-height: 2em;
+        color: $text-grey;
+        background-color: $background-color-white;
+        margin-right: 5.5%;
+        position: relative;
+        width: 100%;
+    }
+    img {
+        width: 100%;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .annex--container {
+        flex-direction: column;
+    }
+}

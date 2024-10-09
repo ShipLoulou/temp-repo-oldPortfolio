@@ -1,0 +1,23 @@
+.carousel__height {
+    background-color: #f2f6fc;
+    height: 480px;
+    position: relative;
+}
+
+@media screen and (max-width: 1080px) {
+    .carousel__height {
+        height: 440px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel__height {
+        height: 46vh;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .carousel__height {
+        height: 38vh;
+    }
+}

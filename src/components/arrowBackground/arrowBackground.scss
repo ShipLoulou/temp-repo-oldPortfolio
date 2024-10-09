@@ -1,0 +1,21 @@
+.arrowBackground {
+    position: absolute;
+}
+.arrow1 {
+    top: 1500px;
+    left: -350px;
+}
+.arrow2 {
+    top: 2500px;
+    right: -400px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 980px) {
+    .arrow1 {
+        display: none;
+    }
+}

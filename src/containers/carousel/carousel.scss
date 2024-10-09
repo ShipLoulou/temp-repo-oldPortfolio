@@ -1,0 +1,361 @@
+#carousel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+// param
+$animationTime: all 500ms ease-in-out;
+
+#carousel {
+    overflow: hidden;
+    // width: 80%;
+    // max-width: 1080px;
+    // margin: auto;
+    padding: 4% 0;
+    .carousel {
+        display: flex;
+        justify-content: center;
+        height: 370px;
+        position: relative;
+        // margin: 50px 0 0;
+        .border {
+            &--left {
+                background: linear-gradient(270deg, rgba(242,246,252,0) 0%, rgba(242,246,252,1) 81%);
+                height: 100%;
+                width: 7%;
+                position: absolute;
+                left: 0;
+                z-index: 100;
+            }
+            &--right {
+                background: linear-gradient(90deg, rgba(242,246,252,0) 0%, rgba(242,246,252,1) 81%);
+                height: 100%;
+                width: 7%;
+                position: absolute;
+                right: 0;
+                z-index: 100;
+            }
+        }
+        &--list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            &--item {
+                position: absolute;
+                cursor: pointer;
+                &--picture {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .animationHidenOpacity {
+                    opacity: 0;
+                }
+                .animationOpacity {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .prevHiden {
+            right: 570px;
+        }
+        .prev {
+            right: 270px;
+        }
+        .active {
+            // width: 500px;
+            // height: 350px;      
+            width: 500px;
+            height: 350px;
+            z-index: 101;
+        }
+        .next {
+            left: 270px;
+        }
+        .nextHiden {
+            left: 570px;
+        }
+        .next, .prev {
+            width: 257px;
+            height: 180px;
+            cursor: pointer;
+        }
+        .nextHiden, .prevHiden {
+            width: 143px;
+            height: 100px;
+        }
+
+                // Animation 
+        // prev
+        .animationPrevPrevHiden {
+            transition: $animationTime;
+            transform: translateX(243px) scale(1.8);
+            opacity: 0.5;
+        }
+        .animationPrevPrev {
+            transition: $animationTime;
+            transform: translateX(399px) scale(1.945);
+            opacity: 1;
+        }
+        .animationPrevActive {
+            transition: $animationTime;
+            transform: translateX(399px) scale(0.513);
+            opacity: 0.5;
+        }
+        .animationPrevNext {
+            transition: $animationTime;
+            transform: translateX(205px) scale(0.85);
+            opacity: 0;
+        }
+        .animationPrevNextHiden {
+            transition: $animationTime;
+            transform: translateX(205px) scale(0.85);
+        }
+        // next
+        .animationNextPrevHiden {
+            transition: $animationTime;
+            transform: translateX(-205px) scale(0.85);
+        }
+        .animationNextPrev {
+            transition: $animationTime;
+            transform: translateX(-205px) scale(0.85);
+            opacity: 0;
+        }
+        .animationNextActive {
+            transition: $animationTime;
+            transform: translateX(-398px) scale(0.515);
+            opacity: 0.5;
+        }
+        .animationNextNext {
+            transition: $animationTime;
+            transform: translateX(-399px) scale(1.945);
+            opacity: 1;
+        }
+        .animationNextNextHiden {
+            transition: $animationTime;
+            transform: translateX(-243px) scale(1.8);
+            opacity: 0.5;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #carousel {
+        .carousel {
+            &--list {
+                &--item {
+                    .animationOpacity {
+                        opacity: 0;
+                    }
+                }
+            }
+
+                // Animation 
+        // prev
+        .animationPrevPrevHiden {
+            transition: $animationTime;
+            transform: translateX(243px) scale(1.8);
+            opacity: 0;
+        }
+        .animationPrevPrev {
+            transition: $animationTime;
+            transform: translateX(399px) scale(1.945);
+            opacity: 1;
+        }
+        .animationPrevActive {
+            transition: $animationTime;
+            transform: translateX(399px) scale(0.513);
+            opacity: 0;
+        }
+        .animationPrevNext {
+            transition: $animationTime;
+            transform: translateX(205px) scale(0.85);
+            opacity: 0;
+        }
+        .animationPrevNextHiden {
+            transition: $animationTime;
+            transform: translateX(205px) scale(0.85);
+        }
+        // next
+        .animationNextPrevHiden {
+            transition: $animationTime;
+            transform: translateX(-205px) scale(0.85);
+        }
+        .animationNextPrev {
+            transition: $animationTime;
+            transform: translateX(-205px) scale(0.85);
+            opacity: 0;
+        }
+        .animationNextActive {
+            transition: $animationTime;
+            transform: translateX(-398px) scale(0.515);
+            opacity: 0;
+        }
+        .animationNextNext {
+            transition: $animationTime;
+            transform: translateX(-399px) scale(1.945);
+            opacity: 1;
+        }
+        .animationNextNextHiden {
+            transition: $animationTime;
+            transform: translateX(-243px) scale(1.8);
+            opacity: 0;
+        }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #carousel {
+        .carousel {
+            height: 340px;
+            .border {
+                &--right, &--left {
+                    display: none;
+                }
+            }
+            .active {
+                width: 91vw;
+                max-width: 500px;
+                height: auto;
+            }
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.945) scaleY(1.94);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 525px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.86) scaleY(1.86);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.77) scaleY(1.77);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.68) scaleY(1.68);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.59) scaleY(1.59);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.51) scaleY(1.51);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.42) scaleY(1.42);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 385px) {
+    #carousel {
+        .carousel {
+            .animationPrevPrev {
+                transition: $animationTime;
+                transform: translateX(398.5px) translateY(-2px) scaleX(1.37) scaleY(1.37);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #carousel {
+        .carousel {
+            height: 280px;
+        }
+    }
+}
+
+// media query for screen size populare
+
+    // ! Iphone 
+
+    // ? 13 pro
+@media screen and (max-width: 390px) {
+    #carousel .carousel .animationPrevPrev {
+        transform: translateX(398.5px) translateY(-2px) scaleX(1.384) scaleY(1.384);
+    }
+}
+
+    // ? XR / XS Max
+    // * Nexus / Google Pixel / Samsung Galaxy Note 10 (+) 
+@media screen and (max-width: 414px) {
+    #carousel .carousel .animationPrevPrev {
+        transform: translateX(398.5px) translateY(-2px) scaleX(1.462) scaleY(1.462);
+    }
+}
+
+    // ? XS / X
+@media screen and (max-width: 375px) {
+    #carousel .carousel .animationPrevPrev {
+        transform: translateX(398.5px) translateY(-2px) scaleX(1.328) scaleY(1.328);
+    }
+}
+
+
+    // ! Samsung
+
+    // ? galaxy S9 (+) / S8 (+) / S7 (Edge)
+@media screen and (max-width: 360px) {
+    #carousel .carousel .animationPrevPrev {
+        transform: translateX(398.5px) translateY(-2px) scaleX(1.273) scaleY(1.273);
+    }
+}

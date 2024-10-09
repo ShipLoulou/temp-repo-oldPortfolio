@@ -1,0 +1,18 @@
+.cardLibrary {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .imgSvg {
+        width: 100%;
+        height: 2.5vw;
+        z-index: 10;
+        position: absolute;
+        top: -0.3px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .cardLibrary {
+        display: block;
+    }
+}

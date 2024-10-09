@@ -1,0 +1,77 @@
+@import '../../utils/variable.scss';
+
+.profil {
+    padding: 54px 0;
+    position: relative;
+    &--container {
+        margin: 0 10%;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    article {
+        padding: 40px 60px;
+        background-color: #f7f9fc;
+    }
+    h2 {
+        font-family: $title-font;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 1.4em;
+        color: $text-darkGrey;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+    p {
+        font-family: $text-font;
+        font-weight: 300;
+        line-height: 2em;
+        color: #666;
+        padding-bottom: 1em;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .profil {
+        &--container {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            margin: 0;
+        }
+        img {
+            width: 30%;
+            position: absolute;
+            right: 55%;
+        }
+        h2 {
+            font-size: 40px;
+            margin: 24px 0;
+        }
+        p {
+            margin: 16px 0;
+        }
+        &--article {
+            width: 60%;
+            z-index: 10;
+            margin-top: 80px;
+            div {
+                max-width: 750px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .profil {
+        &--container {
+            margin: 0 7%;
+        }
+        article {
+            padding: 40px 45px;
+        }
+    }
+}
